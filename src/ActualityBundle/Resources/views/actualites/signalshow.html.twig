@@ -1,0 +1,40 @@
+{% extends 'template.html.twig' %}
+
+{% block dynamique %}
+    <h1>List of reported news</h1>
+
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id of the news</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for asign in asign %}
+            <tr>
+                <td>{{ asign.id }}</td>
+                <td>{{ asign.actualite.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('actualites_signaldelete', { 'id': asign.id }) }}">Delete</a>
+                        </li>
+
+                    </ul>
+                </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('actualites_index') }}">Back</a>
+        </li>
+    </ul>
+
+
+{% endblock %}

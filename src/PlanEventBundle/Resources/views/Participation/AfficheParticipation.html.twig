@@ -1,0 +1,34 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h2> Event list </h2>
+        <br>
+        <br>
+        <br>
+        <table border="2" class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">User Name </th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Date</th>
+                <th scope="col">Event Affiche</th>
+            </tr>
+            </thead>
+
+
+            {% for f in participations %}
+                <tr>
+                    <td> {{ f.iduser.username }} </td>
+                    <td> {{ f.idevent.nomevent }} </td>
+                    <td> {{ f.idevent.dateevent | date('Y-m-d')}} </td>
+                    <td> <img src="{{ asset('Uploads/Images/'~ f.idevent.affiche) }}" height="70px" width="180px" /></td>
+                   <td> <a href="{{ path('plan_event_deleteParticipation',{'id':f.idparticipation}) }}" > <button class="btn btn-dark"> Supprimer</button></a></td>
+
+
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+
+{% endblock %}

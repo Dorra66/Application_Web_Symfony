@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+<center>
+    {% if(test=="ajout") %}
+        <h1> Add a Feed_Back </h1>
+    {% else %}
+        <h1> Modify My Feed_Back  </h1>
+    {% endif %}
+</center>
+    <br>
+    <br>
+    <br>
+<center>
+    {{ form_start(form) }}
+    <table>
+        <tr>
+            <td> Feed_Back Description:</td> <td>
+
+                {{ form_widget(form.descriptionavis) }}</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>
+                {% if (test=="modify") %}
+                <input type="submit" value="Modifier">
+                {% else %}
+                <input type="submit" value="Ajouter"></td>
+            {% endif %}
+        </tr>
+    </table>
+</center>
+
+    {{ form_end(form) }}
+
+
+{% endblock %}

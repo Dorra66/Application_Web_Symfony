@@ -1,0 +1,29 @@
+services:
+#    plan_event.example:
+#        class: PlanEventBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+  nomaya.socialBarHelper:
+    class: Nomaya\SocialBundle\Helpers\SocialBarHelper
+    tags:
+      - {name: 'Templating.Helper', alias: 'social-buttons'}
+    arguments: [ "@templating" ]
+
+  twig.extension.nomaya_social_bar:
+    class: Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar
+    tags:
+      - { name: 'twig.extension' }
+    arguments: [ "@service_container" ]
+
+  nomaya.socialLinksHelper:
+    class: Nomaya\SocialBundle\Helpers\SocialLinksHelper
+    tags:
+      - {name: 'templating.helper', alias: 'social-links'}
+    arguments: [ "@templating" ]
+
+  twig.extension.nomaya_social_links:
+    class: Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialLinks
+    tags:
+      - { name: 'twig.extension' }
+    arguments: [ "@service_container" ]
+

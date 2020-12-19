@@ -1,0 +1,42 @@
+{#{% extends 'base.html.twig'%}#}
+{#{% block body %}#}
+{#Discover Our Books ! #}
+{#<br><br><br><br><br><br><br><br><br><br><br>#}
+{#{% endblock %}#}
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <style>
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 25px;
+            flex: 25%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            padding: 5px;
+        }
+        .row {
+            display: flex;
+        }
+    </style>
+    <center><h2>Discover Our Books ! </h2></center>
+    <div class="row" >
+        {% for book in books %}
+            <center>
+                <div class="column" >
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('uploads/book/' ~ book.bookimage) }}" style="width: 18rem; height: 18rem" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.booktitle }}</h5>
+                            <p class="card-text">{{ book.bookauthor }}</p>
+                           <a href="{{ path('userrequest_new',{'id':book.bookid})}}"> <button class="btn-info">Issue</button></a>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        {% endfor %}
+    </div>
+{% endblock %}

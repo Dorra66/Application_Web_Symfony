@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center xmlns="http://www.w3.org/1999/html">
+        <br>
+        <h2>My Claims List</h2>
+        <br>
+        <table border="3" cellpadding="3" class=" table-striped table-light">
+            <tr>
+                <td><center> Object </center></td>
+                <td><center> Content </center></td>
+                <td><center> Date </center></td>
+                <td><center> Status </center></td>
+                <td><center> Reply </center></td>
+            </tr>
+            {% for r in Reclamations %}
+                <tr>
+                    <td>{{ r.objetReclamation }}</td>
+                    <td>{{ r.descriptionReclamation }}</td>
+                    <td>{{ r.dateReclamation |date('M m, Y H:m:s')}}</td>
+                    <td>{{ r.statutsReclamation }}</td>
+                    <td>{{ r.reponseReclamation }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </br>
+    </center>
+
+{% endblock %}

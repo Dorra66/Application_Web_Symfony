@@ -1,0 +1,48 @@
+{% extends 'template.html.twig' %}
+
+{% block dynamique %}
+
+    <h1>Publicite</h1>
+
+    <table border="2">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ publicite.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ publicite.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ publicite.description }}</td>
+            </tr>
+            <tr>
+                <th>Imag</th>
+                <td><img src="{{ asset('images/'~ publicite.imag) }}"  /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('publicites_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('publicites_edit', { 'id': publicite.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+    <img src="{{ asset('images/facebook.png') }}"/>
+    {{ socialButtons( {'pinterest':false} ) }}
+
+
+    {{ socialLinks() }}
+
+{% endblock %}

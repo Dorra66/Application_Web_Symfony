@@ -1,0 +1,27 @@
+actuality_actualites:
+    resource: "@ActualityBundle/Resources/config/routing/actualites.yml"
+    prefix:   /actualites
+actuality_publicites:
+    resource: "@ActualityBundle/Resources/config/routing/publicites.yml"
+    prefix:   /publicites
+actuality_sponsoring:
+    resource: "@ActualityBundle/Resources/config/routing/sponsoring.yml"
+    prefix:   /sponsoring
+main_userpage:
+    path:     /user
+    defaults: { _controller: "ActualityBundle:Default:user" }
+main_adminpage:
+    path:     /admin
+    defaults: { _controller: "ActualityBundle:Default:admin" }
+main_tohomepage:
+    path:     /
+    defaults: { _controller: "ActualityBundle:Default:tohome" }
+ajax_search:
+    path:     /search
+    defaults: { _controller: "ActualityBundle:Default:search" }
+
+
+
+
+
+

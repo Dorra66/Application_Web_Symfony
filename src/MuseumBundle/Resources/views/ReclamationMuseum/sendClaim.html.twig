@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <br>
+        <h1> Send Claim </h1>
+        <br>
+    </center>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> Object:</td> <td> {{ form_widget(form.objetreclamation, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'Write the object here ...'}}) }} </td>
+            </tr>
+            <tr>
+                <td> Content:</td> <td> {{ form_widget(form.descriptionreclamation,  {'attr': {'class': 'form-control','rows':'4','cols':'87','placeholder':'Write your claim here ...'}}) }} </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    <center>
+                    {% if (test=="modify") %}
+                    <input type="submit" value="Edit"></a>
+                    {% else %}
+                    <br>
+                    <input class="btn btn-primary" onclick="return alert('Your claim has been successfully sended, thanks.')" type="submit" value="Send">
+                    </center>
+                </td>
+                {% endif %}
+            </tr>
+        </table>
+        {{ form_end(form) }}
+    </center>
+
+{% endblock %}

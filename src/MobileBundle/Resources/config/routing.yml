@@ -1,0 +1,43 @@
+mobile_homepage:
+    path:     /
+    defaults: { _controller: MobileBundle:Default:index }
+
+mobile_afficheevent:
+    path:     /afficheEvent
+    defaults: { _controller: MobileBundle:Event:afficheEvent }
+
+mobile_getdatevent:
+    path:     /getDateEvent/{id}
+    defaults: { _controller: MobileBundle:Event:getDateEvent }
+
+mobile_ajoutparticipation:
+    path:     /ajoutParticip/{idevent}/{iduser}
+    defaults: { _controller: MobileBundle:Event:ajoutParticip }
+
+mobile_login:
+    path:     /login
+    defaults: { _controller: MobileBundle:User:login }
+
+mobile_finduserbyid:
+    path:     /findUser/{id}
+    defaults: { _controller: MobileBundle:User:findById }
+
+mobile_myparticipations:
+    path:     /MyParticipations/{id}
+    defaults: { _controller: MobileBundle:Event:MyParticipations }
+
+mobile_deletepart:
+    path:     /UserDeletePart
+    defaults: { _controller: MobileBundle:Event:UserDeletePart }
+
+mobile_getId:
+    path:     /getMyPart
+    defaults: { _controller: MobileBundle:Event:getMyPart }
+
+mobile_ajoutercommentaire:
+    path:     /ajouterCommentaire
+    defaults: { _controller: MobileBundle:Event:ajouterAvisEvenement }
+
+mobile_mesavis:
+    path:     /myFeeds
+    defaults: { _controller: MobileBundle:Event:MyFeedBacks }

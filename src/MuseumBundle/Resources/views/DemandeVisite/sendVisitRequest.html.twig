@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <br>
+        <h1> Send Visit Request </h1>
+        <br>
+    </center>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> Organization Type:</td> <td> {{ form_widget(form.nomorganismed, {'attr': {'class': 'form-control','cols':'55'}}) }}</td>
+                {% if((form_errors(form.nomorganismed)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Organization Name Is Required !! Please Choose One.
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Telephone number:</td> <td> {{ form_widget(form.numteld, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'8 numbers required'}}) }}</td>
+                {% if((form_errors(form.numteld)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Telephone Number Length Must Be equal to 8 !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> E-mail:</td> <td> {{ form_widget(form.maild, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'xxx@yyy.com'}}) }}</td>
+            </tr>
+            <tr>
+                <td> Postal address:</td> <td> {{ form_widget(form.addpostaled, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'address ...'}}) }}</td>
+            </tr>
+            <tr>
+                <td> Date of visit:</td> <td> {{ form_widget(form.datevisited, {'attr': {'class': 'form-control','rows':'4','cols':'55'}}) }}</td>
+                {% if((form_errors(form.datevisited)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Visit Date Must Be Greater Than Today !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Hour:</td> <td> {{ form_widget(form.heurevisited, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'Write the object here ...'}}) }}</td>
+                {% if((form_errors(form.heurevisited)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Hour Is Required !! Please Choose An Hour Of Visit.
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Visitors number:</td> <td> {{ form_widget(form.nbrevisiteursd, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'<51'}}) }}</td>
+                {% if((form_errors(form.nbrevisiteursd)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Visitors Number Must Be Positive And Less Or Equal Than 50 !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    {% if (test=="modify") %}
+                        <input type="submit" value="Edit">
+                    {% else %}
+                        <br>
+                        <input class="btn btn-primary" type="submit"  value="Send">
+                    {% endif %}
+                </td>
+                </tr>
+            </table>
+            {{ form_end(form) }}
+        </center>
+{% endblock %}

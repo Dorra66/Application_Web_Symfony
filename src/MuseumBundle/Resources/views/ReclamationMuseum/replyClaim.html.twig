@@ -1,0 +1,37 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1> Reply To Claim </h1>
+    </center>
+    <center>
+        <table>
+            {{ form_start(form) }}
+            <tr>
+                <td > Sender:</td> <td> {{ form_widget(form.idsource, {'attr': {'class': 'form-control','readonly':'readonly'}}) }} </td>
+            </tr>
+            <tr>
+                <td> Object:</td> <td> {{ form_widget(form.objetreclamation, {'attr': {'class': 'form-control','readonly':'readonly'}}) }} </td>
+            </tr>
+            <tr>
+                <td> Content:</td> <td> {{ form_widget(form.descriptionreclamation, {'attr': {'class': 'form-control','readonly':'readonly'}}) }} </td>
+            </tr>
+            <tr>
+                <td> Reply:</td> <td> {{ form_widget(form.reponsereclamation, {'attr': {'class': 'form-control','rows':'4','cols':'87','placeholder':'Write something ...'}}) }}</td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    <center>
+                    {% if (test=="modify") %}
+                        <input onclick="return alert('Your reply has been successfully sended.')" class="btn btn-primary" type="submit" value="Send">
+                    {% else %}
+                        <input type="submit" value="Edit">
+                    {% endif %}
+                    {{ form_end(form) }}
+                    <a href="{{ path('museum_showClaimspage')}}"><button class="btn btn-secondary">Cancel</button></a>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </center>
+{% endblock %}

@@ -1,0 +1,9 @@
+main_homepage:
+    path:     /index
+    defaults: { _controller: MainBundle:Default:index }
+
+main_testpage:
+    path:     /test/{classe}
+    defaults: { _controller: MainBundle:Default:test }
+
+

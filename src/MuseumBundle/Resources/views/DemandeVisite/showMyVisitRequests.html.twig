@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center xmlns="http://www.w3.org/1999/html">
+        <br>
+        <h2>My Visit Requests</h2>
+        <br>
+        <table border="3" cellpadding="3" class=" table-striped table-light">
+            <tr>
+                <td><center> Oraganization Name </center></td>
+                <td><center> Organizer Name </center></td>
+                <td><center> TEL. Number </center></td>
+                <td><center> E-mail </center></td>
+                <td><center> Address </center></td>
+                <td><center> Date </center></td>
+                <td><center> Hour </center></td>
+                <td><center> Visitors Number </center></td>
+                <td><center> Status </center></td>
+            </tr>
+            {% for dv in Demandevisite %}
+                <tr>
+                    <td>{{ dv.nomOrganismeD }}</td>
+                    <td>{{ dv.nomResponsableD }}</td>
+                    <td>{{ dv.numTelD }}</td>
+                    <td>{{ dv.mailD }}</td>
+                    <td>{{ dv.addPostaleD }}</td>
+                    <td>{{ dv.dateVisiteD |date("Y-m-d") }}</td>
+                    <td>{{ dv.heureVisiteD }}</td>
+                    <td>{{ dv.nbreVisiteursD }}</td>
+                    <td>{{ dv.etatDV }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </br>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1> Add Monument </h1>
+    </center>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> Name:</td> <td> {{ form_widget(form.nomm, {'attr': {'class': 'form-control','placeholder':'name of the monument ...'}}) }}</td>
+            </tr>
+            <tr>
+                <td> Description:</td> <td> {{ form_widget(form.descriptionm, {'attr': {'class': 'form-control','rows':'4','cols':'55','placeholder':'description of the monument ...'}}) }}</td>
+            </tr>
+            <tr>
+                <td> Picture:</td> <td> {{ form_row(form.imagem) }}</td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    <center>
+                    {% if (test=="modify") %}
+                        <input type="submit" value="Edit">
+                    {% else %}
+                        <input class="btn btn-primary" type="submit" value="Add"></td>
+                    {% endif %}
+                    </center>
+            </tr>
+        </table>
+        {{ form_end(form) }}
+    </center>
+
+{% endblock %}

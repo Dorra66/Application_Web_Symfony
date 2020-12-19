@@ -1,0 +1,35 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <div class="BackButtons" style="margin-left: 89%">
+        <a href="{{ path('user_index') }}"><button type="button" class="btn btn-dark">Back to the list</button></a>
+    </div>
+    {#    <div style="height:495px">#}
+    <h3> Take a close look !</h3>
+    <table class="table table-striped">
+        <thead>
+        <tbody>
+        <tr>
+            <th scope="col">Id</th>
+            <td>{{ user.id}}</td>
+        </tr>
+
+        <tr>
+            <th scope="col">Name</th>
+            <td>{{ user.nom}}</td>
+        </tr>
+
+        <tr>
+            <th scope="col">LastName</th>
+            <td>{{ user.prenom}}</td>
+        </tr>
+        <tr>
+            <th scope="col">NICard</th>
+            <td>{{ user.cin}}</td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_start(delete_form) }}
+    <a href="{{ path('user_index') }}"><button type="submit" class="btn btn-danger" style="margin-left:85%;width: 15%">Delete this User</button></a>
+    {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

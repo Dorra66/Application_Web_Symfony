@@ -1,0 +1,75 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+<div style="margin-left:10%;width: 80%">
+    <h1>Please Fill this Form !</h1>
+<div class="card-body">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'|trans } }) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Name'} }) }}
+        {{ form_errors(form.nom) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Last Name'|trans } }) }}
+        {{ form_errors(form.prenom) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.cin, { 'attr': {'class': 'form-control', 'placeholder': 'CIN' } }) }}
+        {{ form_errors(form.cin) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+        {{ form_errors(form.username) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'form.password'|trans } }) }}
+        {{ form_errors(form.plainPassword.first) }}
+    </div>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'form.password_confirmation'|trans } }) }}
+        {{ form_errors(form.plainPassword.second) }}
+    </div>
+
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+        {{ form_widget(form.roles, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+        {{ form_errors(form.roles) }}
+    </div>
+    <div>
+        <div class="row align-items-center remember">
+            <input type="checkbox">I accept terms and conditions
+        </div>
+    </div>
+    <div>
+        <input class="btn float-right login_btn" type="submit" value="{{ 'registration.submit'|trans }}"/>
+    </div>
+    {{ form_end(form) }}
+</div>
+</div>
+

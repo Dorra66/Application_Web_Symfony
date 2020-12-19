@@ -1,0 +1,86 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <html>
+    <head>
+        <title>Statistics</title>
+        <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+        </script>
+        <script type = "text/javascript">
+            google.charts.load('current', {packages: ['corechart']});
+        </script>
+    </head>
+
+    <body>
+    <center>
+        <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+        </div>
+        <script language = "JavaScript">
+            function drawChart() {
+                // Define the chart to be drawn.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Browser');
+                data.addColumn('number', 'Percentage');
+                data.addRows([
+                    ['decoration element', 18],
+                    ['Painting Moonlight Stars',8],
+                    ['Stars', 5],
+                    ['Arrangement antiquaire ', 1],
+                    ['THE MOMENT OF LOVE', 8],
+                    ['tableau',44]
+
+                ]);
+
+                // Set chart options
+                var options = {'width':700, 'height':700 };
+
+                // Instantiate and draw the chart.
+                var chart = new google.visualization.PieChart(document.getElementById ('container'));
+                chart.draw(data, options);
+            }
+            google.charts.setOnLoadCallback(drawChart);
+        </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+    </body>
+    </html>
+{% endblock %}

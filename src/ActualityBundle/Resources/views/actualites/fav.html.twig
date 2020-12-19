@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block dynamique %}
+    <h1>My favourite list</h1>
+
+    <table border="2">
+        <thead>
+        <tr>
+
+            <th>Id_user</th>
+            <th>Id_news</th>
+            <th>Actions</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for ou in ou %}
+            <tr>
+
+                <td>{{ ou.user.id }}</td>
+                <td>{{ ou.actualite.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('delete_fav', { 'id': ou.id }) }}">delete</a>
+                        </li>
+
+                    </ul>
+                </td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('actualites_home') }}">Back</a>
+        </li>
+    </ul>
+
+{% endblock %}

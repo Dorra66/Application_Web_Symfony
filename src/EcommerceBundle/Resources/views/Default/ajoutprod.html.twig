@@ -1,0 +1,92 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black ">Add new Product</h1>
+        {{ form_start(form) }}
+        <table>
+
+           {#<tr>
+                <td>id*:</td><td>{{ form_widget(form.idProd) }}</td>
+            </tr>  #}
+            <tr>
+                <td style="color: #0000F0 "><b>name*:</b></td><td>{{ form_widget(form.nomProd) }}</td>
+            </tr>
+            <tr>
+                <td style="color: #0000F0 "><b>Description:</b></td><td>{{ form_widget(form.description) }}</td>
+            </tr>
+            <tr>
+                <td style="color: #0000F0 "><b>stock*:</b></td><td>{{ form_widget(form.stock) }}</td>
+            </tr>
+            {% if((form_errors(form.stock)==true)) %}
+                <div class="alert alert-primary" role="alert">
+                    The Stock Must Be Positive !!!!!
+                </div>
+            {% endif %}
+            <tr>
+                <td style="color: #0000F0 "><b>price:</b></td><td>{{ form_widget(form.prix) }}</td>
+            </tr>
+            <tr>
+                <td style="color: #0000F0 "><b>Picture:</b></td><td>{{ form_row(form.image) }}</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    {% if (test=="modify") %}
+                        <input type="submit" value="update" onclick="return(confirm('Save modifications ?'));">
+                    {% else %}
+                        <input type="submit" value="Add">
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+
+    {{ form_end(form) }}
+{% endblock %}

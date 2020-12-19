@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h2 style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black "> My Basket </h2>
+        <br>
+        <br>
+        <table border="1"  cellpadding="15" cellspacing="10" width="80%"  style="background-color: #fadbd8 ;table-layout: fixed;width: 75%;border-collapse: collapse;border: 3px solid  #fadbd8  ;text-align: center ">
+            <tr>
+
+                {#<td><label>My basket</label></td> #}
+                <td  style=" font-family: 'Rock Salt', cursive  ;background-color: #fdedec "><label>First Name </label></td>
+                  <td  style=" font-family: 'Rock Salt', cursive;background-color: #fdedec "><label>Last Name </label></td>
+                <td  style=" font-family: 'Rock Salt', cursive ;background-color: #fdedec "><label>product Name</label></td>
+                <td  style=" font-family: 'Rock Salt', cursive ;background-color: #fdedec "><label>Price</label></td>
+            </tr>
+            {% for f in paniers %}
+                <tr>
+                      <td style="font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.user.prenom}} </td>
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.user.nom}} </td>
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.produit.nomProd}} </td>
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.produit.prix}} <labe>DT</labe></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <img alt="gproduit" src="{{ asset('images/Ce.PNG')  }}"  height="200px" width="250px" align="center">
+   <br>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+           {# <h2> Total :</h2> #}
+
+    </center>
+
+{% endblock %}

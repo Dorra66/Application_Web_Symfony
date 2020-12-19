@@ -1,0 +1,29 @@
+issue_index:
+    path:     /
+    defaults: { _controller: "LibraryBundle:Issue:index" }
+    methods:  GET
+
+issue_show:
+    path:     /{issueid}/show
+    defaults: { _controller: "LibraryBundle:Issue:show" }
+    methods:  GET
+
+issue_new:
+    path:     /new
+    defaults: { _controller: "LibraryBundle:Issue:new" }
+    methods:  [GET, POST]
+
+issue_edit:
+    path:     /{issueid}/edit
+    defaults: { _controller: "LibraryBundle:Issue:edit" }
+    methods:  [GET, POST]
+
+issue_delete:
+    path:     /{issueid}/delete
+    defaults: { _controller: "LibraryBundle:Issue:delete" }
+    methods:  DELETE
+
+book_return:
+    path:     /return/{issueid}
+    defaults: { _controller: "LibraryBundle:Issue:return" }
+    methods:  [GET, POST]

@@ -1,0 +1,69 @@
+ecommerce_homepage:
+    path:     /
+    defaults: { _controller: EcommerceBundle:Default:index }
+ecommerce_choixpage:
+    path:     /choix
+    defaults: { _controller: EcommerceBundle:Default:choix }
+ecommerce_listpage:
+    path:     /list
+    defaults: { _controller: EcommerceBundle:Default:listproduits }
+ecommerce_deletepage:
+    path:     /delete/{id}
+    defaults: { _controller: EcommerceBundle:Default:deleteprod }
+ecommerce_ajoutpage:
+    path:     /ajout
+    defaults: { _controller: EcommerceBundle:Default:ajoutprod }
+ecommerce_updatepage:
+    path:     /updateprod/{id}
+    defaults: { _controller: EcommerceBundle:Default:updateprod }
+ecommerce_affichecataloguepage:
+    path:     /catalogue
+    defaults: { _controller: EcommerceBundle:Catalogue:catalogueproduits}
+main_adminpage:
+    path:     /admin
+    defaults: { _controller: EcommerceBundle:Default:admin }
+main_userpage:
+    path:     /user
+    defaults: { _controller: EcommerceBundle:Default:user }
+ecommerce_addproduitspage:
+    path:     /addproduits/{id}
+    defaults: { _controller: EcommerceBundle:Catalogue:addproduits }
+ecommerce_chartpage:
+    path:     /chart
+    defaults: { _controller: EcommerceBundle:Default:chart }
+ecommerce_cmdpage:
+    path:     /cmd
+    defaults: { _controller: EcommerceBundle:Default:listcmd }
+ecommerce_monpanierpage:
+    path:     /monpanier
+    defaults: { _controller: EcommerceBundle:Catalogue:showpanier }
+ecommerce_totalpage:
+    path:     /montotal
+    defaults: { _controller: EcommerceBundle:Catalogue:gettotal }
+ecommerce_validecmdpage:
+    path:     /moncmd
+    defaults: { _controller: EcommerceBundle:Catalogue:validecmd }
+ecommerce_cancelcmdpage:
+    path:     /cancelcmd
+    defaults: { _controller: EcommerceBundle:Catalogue:cancelcmd }
+ecommerce_cmdsuccespage:
+    path:     /ok
+    defaults: { _controller: EcommerceBundle:Catalogue:validecmd }
+ecommerce_totalperpage:
+    path:     /montotalper
+    defaults: { _controller: EcommerceBundle:Catalogue:gettotalper }
+ecommerce_monpanierperpage:
+    path:     /monpanierper
+    defaults: { _controller: EcommerceBundle:Catalogue:showpanierper }
+ecommerce_alluserspage:
+    path:     /allUsers
+    defaults: { _controller: EcommerceBundle:Catalogue:allUsers }
+ecommerce_allpanierpage:
+    path:     /allpaniers
+    defaults: { _controller: EcommerceBundle:Catalogue:allpanier }
+ecommerce_allpage:
+    path:     /allp
+    defaults: { _controller: EcommerceBundle:Catalogue:all }
+ecommerce_addproduitsperpage:
+    path:     /addproduitsper/{id}
+    defaults: { _controller: EcommerceBundle:Catalogue:addproduitsper }

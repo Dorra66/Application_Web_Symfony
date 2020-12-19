@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <img alt="gproduit" src="{{ asset('images/Capture.PNG')  }}"  height="150px" width="200px" align="center"> <h2 style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black " > Products Catalogue </h2>
+        <br>
+        <br>
+        <table border="1"  cellpadding="15" cellspacing="10" width="80%"  style="background-color: #fce5e3
+ ;table-layout: fixed;
+  width: 100%;border-collapse: collapse;border: 3px solid #ffefdb ;text-align: center ">
+            <tr style=" background-color: #f9eae8 ">
+               {# <td><label>id</label></td> #}
+                <td align="center" style=" letter-spacing:1px ;font-family: 'Rock Salt', cursive ; background-color:  #fce5e3
+ "><label><b>name</b></label></td>
+                <td align="center" style=" letter-spacing: 1px  ;font-family: 'Rock Salt', cursive ; background-color:  #fce5e3
+" ><label><b>description</b></label></td>
+               {# <td><label><b>stock</b></label></td> #}
+                <td align="center" style=" letter-spacing: 1px  ;font-family: 'Rock Salt', cursive ;background-color:  #fce5e3
+"><label><b>price</b></label></td>
+                <td align="center" style=" letter-spacing: 1px ;font-family: 'Rock Salt', cursive ;background-color:  #fce5e3
+ "><label><b>Picture</b></label></td>
+            </tr>
+            {% for f in prods %}
+                <tr  style=" background-color:  #f9eae8">
+
+                  {#  <td> {{ f.idProd}} </td> #}
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.nomProd}} </td>
+                    <td  style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.description}} </td>
+                   {# <td> {{ f.stock}} </td> #}
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"> {{ f.prix}} <b><label style="color: red">DT</label></b></td>
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif"><img src="{{ asset('uploads/images/' ~f.image) }}" height="100px" width="200px"></td>
+                    <td style=" font-family: 'helvetica neue', helvetica, arial, sans-serif" >{% if (f.stock)  %}<a href="{{ path('ecommerce_addproduitspage',{'id':f.idProd}) }}"><img alt="gproduit" src="{{ asset('images/index.jpg')  }}"  height="50px" width="50px" align="center"><button style="-webkit-transition-duration: 0.4s;transition-duration: 0.4s ; background-color:  #a5a2a2
+;color: white; height: 60px ">add to my basket</button></a>
+                        {% else  %}Insufficent stock
+                        {% endif %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+     {#   <div class="text-center">{{ knp_pagination_render(tabs) }}</div> #}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </center>
+
+{% endblock %}

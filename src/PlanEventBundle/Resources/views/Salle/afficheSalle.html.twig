@@ -1,0 +1,32 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h2> Room list </h2>
+        <br>
+        <br>
+        <br>
+        <table border="2" class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Room Name </th>
+                <th scope="col">Room Capacity</th>
+                <th scope="col">Room Category</th>
+
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            {% for f in salles %}
+
+                    <td> {{ f.libelle }} </td>
+                    <td> {{ f.capacite }} </td>
+                    <td> {{ f.categoriesalle }} </td>
+                    <td> <a href="{{ path('plan_event_deleteSalle',{'id':f.idsalle}) }}"> <button class="btn btn-dark"> Supprimer</button></a></td>
+                    <td> <a href="{{ path('plan_event_updateSalle',{'id':f.idsalle}) }}"> <button class="btn btn-dark"> Modifier</button></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+
+{% endblock %}

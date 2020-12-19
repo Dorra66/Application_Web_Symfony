@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        {% if(test=="current") %}
+        <h2> My Participations  </h2>
+        {% else %}
+        <h2> My Late Participations  </h2>
+        {% endif %}
+       {# <table border="2" >
+            <td>   Event Name</td>
+           <td> Event Date </td>
+            <td>  Event Hour  </td>
+            <td>  Event Affiche  </td>
+            <td>  </td>#}
+        <br>
+
+        <br>
+        <table border="2" class="table" id="tableac">
+            <thead class="thead-dark" >
+            <tr>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Date</th>
+                <th scope="col">Event Hour</th>
+                <th scope="col">Event Affiche</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            {% for f in participations %}
+                <tr>
+                    <td> {{ f.idevent.nomevent }} </td>
+                   <td> {{ f.idevent.dateevent | date('l , Y-m-d ')}} </td>
+                    <td> {{ f.idevent.heureevent }} </td>
+                    <td> <img src="{{ asset('Uploads/Images/' ~ f.idevent.affiche) }}" height="100px" width="250px"/></td>
+                    <td> <a href="{{ path('plan_event_UserDeleteParticipation',{'id':f.idparticipation}) }}" onclick="return confirm('Do you want to delete this participation !')"> <button class="btn btn-dark"> Supprimer</button></a></td>
+                    <td> <a href="{{ path('plan_event_UserAjoutAvis',{'id':f.idparticipation}) }}"> <button class="btn btn-dark"> Add Feed_Back</button></a></td>
+                    {% if(test=="late") %}
+
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+<br><br>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+{% endblock %}

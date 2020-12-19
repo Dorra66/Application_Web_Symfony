@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    {#<center>
+        <h2> Event list </h2>
+        <div class="card" style="width: 18rem;">
+
+            {% for f in events %}
+            <div class="card-body">
+                <h5 class="card-title">{{ f.nomevent }}</h5>
+                <h5 class="card-title"> {{ f.categorieevent }} </h5>
+                <h6 class="card-subtitle mb-2 text-muted"><img src="{{ asset('Uploads/Images/' ~ f.affiche) }}" height="100px" width="250px"></h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{ f.dateevent | date}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{ f.heureevent }}</h6>
+
+                {% if (f.nbrplacedispo>0) %}
+                    <td>  <a href="{{ path('plan_event_ajoutParticipation',{'id':f.idevent })}}"> <button class="btn btn-dark"> Participer </button></a></td>
+
+                {% endif %}
+            </div>
+        </div>
+
+        {% endfor %}
+    </center>#}
+       {#<table border="2">
+            <td>  Event Name  </td>
+            <td> Event Category </td>
+            <td> Number of Places</td>
+            <td>  Event Date  </td>
+            <td>  Event Hour  </td>
+            <td>  Event Affiche  </td>
+            <td>  </td>
+            {% for f in events %}
+
+
+                <tr>
+                    <td> {{ f.nomevent }} </td>
+                    <td> {{ f.categorieevent }} </td>
+                    <td> {{ f.nbrplacedispo }} </td>
+                    <td> {{ f.dateevent | date}} </td>
+                    <td> {{ f.heureevent }} </td>
+                    <td> <img src="{{ asset('Uploads/Images/' ~ f.affiche) }}" height="100px" width="250px"></td>
+                    {% if (f.nbrplacedispo>0) %}
+                       <td>  <a href="{{ path('plan_event_ajoutParticipation',{'id':f.idevent })}}"> <button> Participer </button></a></td>
+
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+        </table>
+    #}
+    <style>
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 25px;
+            flex: 25%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            padding: 5px;
+        }
+        .row {
+            display: flex;
+        }
+    </style>
+
+    <center><h2>Event list</h2></center>
+    <br>
+    <br>
+    <br>
+
+    <div class="row" >
+        {% for f in events %}
+            <center>
+                <div class="column" >
+                   <h6 class="card-title" >{{ f.nomevent }}</h6>
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('Uploads/Images/' ~ f.affiche) }}" style="width: 18rem; height: 18rem" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ f.dateevent | date('l , Y-m-d')}}</h5>
+                            <p class="card-text">{{ f.heureevent }}</p>
+                            {% if (f.nbrplacedispo>0) %}
+                                <td>  <a href="{{ path('plan_event_ajoutParticipation',{'id':f.idevent })}}"> <button class="btn btn-dark"> Participer </button></a></td>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </center>
+        {% endfor %}
+    </div>
+
+{% endblock %}

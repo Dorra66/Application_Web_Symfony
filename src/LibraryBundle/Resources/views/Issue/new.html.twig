@@ -1,0 +1,25 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <div class="createForm"style=" margin-top:-20px;margin-left:250px;width:60%">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Create Issue !</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                {{ form_start(form) }}
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-success" style="margin-left:72%;width: 30%">Create</button>
+                <a href="{{ path('issue_index') }}"><button type="button" class="btn btn-info"style="margin-left:280px;width: 30%;margin-top:-65px">Cancel</button></a>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

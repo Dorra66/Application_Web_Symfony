@@ -1,0 +1,52 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+
+    <center>
+        <br>
+        <img alt="gproduit" src="{{ asset('images/To.png')  }}"  height="200px" width="200px" align="center"> <h2  style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black "> Products list </h2>
+
+        <br>
+        <br>
+        <table border="1" width="60%"    align="center" style="background-color:#FFFFFF  ;border: 5px solid #696969 " >
+            <tr>
+                {#<td><label>id</label></td> #}
+                <td><label style="background-color:  #a9cce3 ">name</label></td>
+                <td><label style="background-color:  #a9cce3 ">description</label></td>
+                <td><label style="background-color:  #a9cce3 ">stock</label></td>
+                <td><label style="background-color:  #a9cce3 ">price</label></td>
+                <td><label style="background-color:  #a9cce3 ">Picture</label></td>
+            </tr>
+            {% for f in tabs %}
+                <tr>
+
+                    {#<td> {{ f.idProd}} </td>  #}
+                    <td> {{ f.nomProd}} </td>
+                    <td> {{ f.description}} </td>
+                    <td> {{ f.stock}} </td>
+                    <td> {{ f.prix}} </td>
+                    <td> {{ f.image}} </td>
+                    <td style="width: 100px;height: 30px "><a href="{{ path('ecommerce_deletepage',{'id':f.idProd}) }}"><img alt="gproduit" src="{{ asset('images/i.jpg')  }}"  height="20px" width="20px" align="center"><button onclick="return(confirm('You sure ?'));">delete</button></a></td>
+                    <td style="width: 100px;height: 30px "><a href="{{ path('ecommerce_updatepage',{'id':f.idProd}) }}"><img alt="gproduit" src="{{ asset('images/up.png')  }}"  height="20px" width="20px" align="center"><button>update</button></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <img alt="gproduit" src="{{ asset('images/indpng.png')  }}"  height="20px" width="20px" align="center"> <a href="{{ path('ecommerce_ajoutpage')}}">Add new product</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1>Users list</h1>
+    </center>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Cin</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.nom}}</td>
+                <td>{{user.prenom}}</td>
+                <td>{{user.cin}}</td>
+                <td>
+                    <ul>
+                        <a href="{{ path('user_show', { 'id': user.id }) }}"><button type="button" class="btn btn-info">show</button></a>
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}"><button type="button" class="btn btn-warning">edit</button></a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

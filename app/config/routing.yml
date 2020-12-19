@@ -1,0 +1,35 @@
+mobile:
+    resource: "@MobileBundle/Resources/config/routing.yml"
+    prefix:   /mobile
+
+museum:
+    resource: "@MuseumBundle/Resources/config/routing.yml"
+    prefix:   /museum
+
+actuality:
+    resource: "@ActualityBundle/Resources/config/routing.yml"
+    prefix:   /actuality
+
+library:
+    resource: "@LibraryBundle/Resources/config/routing.yml"
+    prefix:   /library
+
+user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /main
+
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /main
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+plan_event:
+    resource: "@PlanEventBundle/Resources/config/routing.yml"
+    prefix:   /event
+
+ecommerce:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /ecommerce

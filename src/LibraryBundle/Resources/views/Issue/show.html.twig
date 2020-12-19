@@ -1,0 +1,44 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <div class="BackButtons" style="margin-left: 89%">
+        <a href="{{ path('issue_index') }}"><button type="button" class="btn btn-dark">Back to the list</button></a>
+    </div>
+    <h3> Take a close look !</h3>
+    <table class="table table-striped">
+        <thead>
+        <tbody>
+        <tr>
+            <th scope="col">Issueid</th>
+            <td>{{ Issue.issueid }}</td>
+        </tr>
+{#        <tr>#}
+{#            <th scope="col">Bookid</th>#}
+{#            <td>{{ book }}</td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <th scope="col">MemberId</th>#}
+{#            <td>{{ User }}</td>#}
+{#        </tr>#}
+        <tr>
+            <th scope="col">Booktitle</th>
+            <td>{{ Issue.booktitle }}</td>
+        </tr>
+        <tr>
+            <th scope="col">MemberName</th>
+            <td> {{ Issue.membername }}</td>
+        </tr>
+        <tr>
+            <th scope="col">MemberLastName</th>
+            <td> {{ Issue.memberlastname }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Issuetime</th>
+            <td>{% if Issue.issuetime %}{{ Issue.issuetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_start(delete_form) }}
+    <a href="{{ path('issue_index') }}"><button type="submit" class="btn btn-danger" style="margin-left:85%;width: 15%">Delete this Issue</button></a>
+    {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block dynamique %}
+    <h1>News list</h1>
+
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Datedebut</th>
+            <th>Datefin</th>
+            <th>Description</th>
+            <th>Titre</th>
+            <th>Img</th>
+            <th>State</th>
+            <th>Actions</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for actualite in actualites %}
+            <tr>
+                <td><a href="{{ path('actualites_affiche', { 'id': actualite.id }) }}">{{ actualite.id }}</a></td>
+                <td>{% if actualite.dateDebut %}{{ actualite.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if actualite.dateFin %}{{ actualite.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ actualite.description }}</td>
+                <td>{{ actualite.titre }}</td>
+                <td><img src="{{ asset('images/'~ actualite.img) }}" height="100px" width="200px"  /></td>
+                <td>{{ actualite.state }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('actualites_signal', { 'id': actualite.id }) }}">signal</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('actualites_fav', { 'id': actualite.id }) }}">Add to my favourite list</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li><a href="{{ path('actualites_showfav')}}">My favourite list</a></li>
+    </ul>
+    <img src="{{ asset('images/facebook.png') }}"/>
+    {{ socialButtons( {'pinterest':false} ) }}
+
+
+    {{ socialLinks() }}
+
+{% endblock %}

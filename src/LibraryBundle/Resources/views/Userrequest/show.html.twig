@@ -1,0 +1,51 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <div class="BackButtons" style="margin-left: 89%">
+        <a href="{{ path('library_AdminUserRequestIndex') }}"><button type="button" class="btn btn-dark">Back to the list</button></a>
+    </div>
+    <h3> One more Look before Confirming !</h3>
+    <table class="table table-striped">
+        <thead>
+        <tbody>
+        <tr>
+            <th scope="col">Idrequest</th>
+            <td>{{ userrequest.idrequest }}</td>
+        </tr>
+
+        <tr>
+            <th scope="col">Booktitle</th>
+            <td>{{ userrequest.booktitle }}</td>
+        </tr>
+
+        <tr>
+            <th scope="col">Membername</th>
+            <td>{{ userrequest.membername }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Memberlastname</th>
+            <td>{{ userrequest.memberlastname }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Memberemail</th>
+            <td> {{ userrequest.memberemail }}</td>
+        </tr>
+
+        <tr>
+            <th scope="col">Membermobile</th>
+            <td> {{ userrequest.membermobile }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Issuedate</th>
+            <td> {{ userrequest.issuedate|date('Y-m-d') }}</td>
+        </tr>
+        <tr>
+            <th scope="col">IssuePeriod</th>
+            <td> {{ userrequest.issueperiod }}</td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_start(delete_form) }}
+    <a href="{{ path('library_AdminUserRequestIndex') }}"><button type="submit"  class="btn btn-danger" style="margin-left:85%;width: 15%">Confirm This Request</button></a>
+    {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

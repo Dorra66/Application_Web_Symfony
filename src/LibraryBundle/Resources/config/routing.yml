@@ -1,0 +1,90 @@
+library_book:
+    resource: "@LibraryBundle/Resources/config/routing/book.yml"
+    prefix:   /adminhome/book
+
+library_issue:
+    resource: "@LibraryBundle/Resources/config/routing/issue.yml"
+    prefix:   /adminhome/issue
+
+library_userrequest:
+    resource: "@LibraryBundle/Resources/config/routing/userrequest.yml"
+    prefix:   /home/myrequest
+
+
+library_AdminUserRequestIndex:
+    path:     /adminhome/requests
+    defaults: { _controller: LibraryBundle:Userrequest:index}
+    methods:  GET
+
+
+library_UserRequestIndex:
+    path:     /home/requests
+    defaults: { _controller: LibraryBundle:Userrequest:userIndex}
+    methods:  GET
+
+
+library_homebooks:
+    path:     /home/books
+    defaults: { _controller: LibraryBundle:Default:index}
+    methods:  GET
+
+library_ADMINuserrequestshow:
+    path:     /{idrequest}/show
+    defaults: { _controller: LibraryBundle:Userrequest:show }
+    methods:  GET
+
+library_ADMINuserrequestdelete:
+    path:     /{idrequest}/delete
+    defaults: { _controller: LibraryBundle:Userrequest:delete }
+    methods:  DELETE
+
+library_toHomepage:
+    path:     /
+    defaults: { _controller: LibraryBundle:Default:whatHome}
+
+library_adminhomepage:
+    path:     /adminhome
+    defaults: { _controller: LibraryBundle:Default:adminHome }
+
+library_homepage:
+    path:     /home
+    defaults: { _controller: LibraryBundle:Default:home }
+
+library_sendmail:
+    path:     /adminhome/manualmail
+    defaults: { _controller: LibraryBundle:Default:sendMail }
+
+library_toemail:
+    path:     /adminhome/sendemail
+    defaults: { _controller: LibraryBundle:Default:newMail }
+
+library_mailadd:
+    path:     /new
+    defaults: { _controller: LibraryBundle:Default:neww}
+
+library_maildisplay:
+    path:     /yaalaaa
+    defaults: { _controller: LibraryBundle:Default:all}
+
+#UserRequest Mobile
+
+userrequestmobile_new:
+    path:     /newUserRequest
+    defaults: { _controller: LibraryBundle:Userrequest:newUserRequestMobile}
+
+userrequestmobile_all:
+    path:     /all
+    defaults: { _controller: LibraryBundle:Userrequest:all}
+
+userrequestmobile_delete:
+    path:     /deleteuserrequest
+    defaults: { _controller: LibraryBundle:Userrequest:deleteUserRequest}
+
+#Book Mobile
+bookmobile_all:
+    path:     /allBooks
+    defaults: { _controller: LibraryBundle:Book:all}
+
+
+
+

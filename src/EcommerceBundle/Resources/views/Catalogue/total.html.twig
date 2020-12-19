@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4 style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black ">Total: </h4>
+    {{ total }}  <label style="color: red"><b> DT </b></label><br><br>
+
+    <td><a href="{{ path('ecommerce_validecmdpage') }}"><button style="-webkit-transition-duration: 0.4s;transition-duration: 0.4s ; background-color:#4CAF50;color:white ;height: 50px" >confirm order</button></a></td>
+    <td><a href="{{ path('ecommerce_cancelcmdpage') }}"><button  style="-webkit-transition-duration: 0.4s;transition-duration: 0.4s ; background-color:#FF0000;color:white ;height: 50px ;width:115px">Cancel</button></a></td>
+    <img alt="gproduit" src="{{ asset('images/v.PNG')  }}"  height="150px" width="250px" align="center">
+</center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

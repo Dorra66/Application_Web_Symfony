@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h2> My Resevation Requests </h2>
+        <br>
+        <br>
+        <br>
+        <table border="1" class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Organizer Name</th>
+                <th scope="col">Organizer LastName</th>
+                <th scope="col"> Organizer Phone</th>
+                <th scope="col">Organizer Mail</th>
+                <th scope="col">Reservation Category</th>
+                <th scope="col">Reservation Name</th>
+                <th scope="col">Number Of Places</th>
+                <th scope="col">Reservation Date</th>
+                <th scope="col">Reservation Hour </th>
+                <th scope="col">Reservation Affiche</th>
+                <th scope="col">Reservation Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            {% for f in reservations %}
+                <tr>
+                    <td> {{ f.nomorg }} </td>
+                    <td> {{ f.prenomorg }} </td>
+                    <td> {{ f.telorg }} </td>
+                    <td> {{ f.mailorg }} </td>
+                    <td> {{ f.categoriereserv }} </td>
+                    <td> {{ f.nomreserv }} </td>
+                    <td> {{ f.nbrplace }} </td>
+                    <td> {{ f.datereserv | date('Y-m-d') }} </td>
+                    <td> {{ f.heure }} </td>
+                    <td> <img src="{{ asset('Uploads/Images/'~ f.affiche) }}" height="70px" width="180px" /></td>
+                    <td> {{ f.etat }} </td>
+                    {% if (f.etat=="In Progress") %}
+                        <td> <a href="{{ path('plan_event_UserDeleteDemande',{'id':f.idreserv}) }}"> <button class="btn btn-dark"> Supprimer</button></a></td>
+                   <td> <a href="{{ path('plan_event_UserUpdateDemande',{'id':f.idreserv}) }}"> <button class="btn btn-dark"> Modifier</button></a></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+
+{% endblock %}

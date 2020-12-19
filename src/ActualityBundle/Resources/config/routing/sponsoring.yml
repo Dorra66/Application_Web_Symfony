@@ -1,0 +1,29 @@
+sponsoring_index:
+    path:     /index
+    defaults: { _controller: "ActualityBundle:Sponsoring:index" }
+    methods:  GET
+
+sponsoring_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActualityBundle:Sponsoring:show" }
+    methods:  GET
+
+sponsoring_new:
+    path:     /new
+    defaults: { _controller: "ActualityBundle:Sponsoring:new" }
+    methods:  [GET, POST]
+
+sponsoring_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActualityBundle:Sponsoring:edit" }
+    methods:  [GET, POST]
+
+sponsoring_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActualityBundle:Sponsoring:delete" }
+    methods:  DELETE
+
+sponsoring_home:
+    path:     /home
+    defaults: { _controller: "ActualityBundle:Sponsoring:home" }
+    methods:  GET

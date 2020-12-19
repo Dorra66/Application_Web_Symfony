@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        {% if(test=="ajout") %}
+        <h1> Add a Reservation Request </h1>
+        {% else %}
+        <h1> Modify My Reservation Request </h1>
+        {% endif %}
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> Phone Number:</td> <td> {{ form_widget(form.telorg) }}</td>
+                {% if((form_errors(form.telorg)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                       This Phone Number Is Invalid !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Reservation Category:</td> <td> {{ form_widget(form.categoriereserv) }}</td>
+            </tr>
+            <tr>
+                <td> Reservation Name:</td> <td> {{ form_widget(form.nomreserv) }}</td>
+            </tr>
+            <tr>
+                <td> Number Of Places:</td> <td> {{ form_widget(form.nbrplace) }}</td>
+            </tr>
+            <tr>
+                <td> Reservation Date:</td> <td> {{ form_widget(form.datereserv)  }}</td>
+                {% if((form_errors(form.datereserv)==true)) %}
+                    <div class="alert alert-primary" role="alert">
+                        The Reservation Date Must Be Greater Than Today !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Reservation Hour:</td> <td> {{ form_widget(form.heure)  }}</td>
+            </tr>
+            <tr>
+                <td> Reservation Affiche:</td> <td> {{ form_row(form.affiche)  }}</td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    {% if (test=="modify") %}
+                    <input type="submit" value="Modifier">
+                    {% else %}
+                    <input type="submit" value="Ajouter"></td>
+                {% endif %}
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+
+
+{% endblock %}

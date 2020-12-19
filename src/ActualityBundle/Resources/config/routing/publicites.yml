@@ -1,0 +1,47 @@
+publicites_index:
+    path:     /index
+    defaults: { _controller: "ActualityBundle:Publicites:index" }
+    methods:  GET
+
+publicites_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActualityBundle:Publicites:show" }
+    methods:  GET
+
+publicites_new:
+    path:     /new
+    defaults: { _controller: "ActualityBundle:Publicites:new" }
+    methods:  [GET, POST]
+
+publicites_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActualityBundle:Publicites:edit" }
+    methods:  [GET, POST]
+
+publicites_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActualityBundle:Publicites:delete" }
+    methods:  DELETE
+
+publicites_home:
+    path:     /home
+    defaults: { _controller: "ActualityBundle:Publicites:home" }
+    methods:  GET
+
+publicites_all:
+    path:     /all
+    defaults: { _controller: "ActualityBundle:Publicites:all"}
+
+publicites_add:
+    path:     /add
+    defaults: { _controller: "ActualityBundle:Publicites:add"}
+
+publicites_supp:
+    path:     /{id}/supp
+    defaults: { _controller: "ActualityBundle:Publicites:supp"}
+
+publicites_find:
+    path:     /find/{str}
+    defaults: { _controller: "ActualityBundle:Publicites:find"}
+
+

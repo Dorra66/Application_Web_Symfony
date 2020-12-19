@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1>My requests</h1>
+    </center>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">BookTitle</th>
+            <th scope="col">MemberName</th>
+            <th scope="col">MemberLastname</th>
+            <th scope="col">MemberEmail</th>
+            <th scope="col">MemberMobile</th>
+            <th scope="col">IssueDate</th>
+            <th scope="col">IssuePeriod</th>
+            <th scope="col">RequestState</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for userrequest in userrequests %}
+            <tr>
+                <td>{{ userrequest.booktitle }}</td>
+                <td>{{ userrequest.membername }}</td>
+                <td>{{ userrequest.memberlastname }}</td>
+                <td>{{ userrequest.memberemail }}</td>
+                <td>{{ userrequest.membermobile }}</td>
+                <td>{{ userrequest.issuedate|date('Y-m-d') }}</td>
+                <td>{{ userrequest.issueperiod }}</td>
+                <td>{{ userrequest.requeststate }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+

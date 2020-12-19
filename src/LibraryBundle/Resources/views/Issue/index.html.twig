@@ -1,0 +1,36 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1>Issue list</h1>
+    </center>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Booktitle</th>
+            <th scope="col">MemberName</th>
+            <th scope="col">MemberLastName</th>
+            <th scope="col">MemberMobile</th>
+            <th scope="col">IssueTime</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for issue in issues %}
+            <tr>
+                <td>{{ issue.booktitle }}</td>
+                <td>{{ issue.membername }}</td>
+                <td>{{ issue.memberlastname }}</td>
+                <td>{{ issue.membermobile }}</td>
+                <td>{% if issue.issuetime %}{{ issue.issuetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <a href="{{ path('issue_show', { 'issueid': issue.issueid }) }}"><button type="button" class="btn btn-info">show</button></a>
+                        <a href="{{ path('issue_edit', { 'issueid': issue.issueid }) }}"><button type="button" class="btn btn-warning">edit</button></a>
+                        <a href="{{ path('book_return',{ 'issueid': issue.issueid }) }}"><button type="button" class="btn btn-primary">Return this Book</button></a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

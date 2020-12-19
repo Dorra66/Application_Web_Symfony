@@ -1,0 +1,29 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1>Product Update</h1>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td>Name*:</td><td>{{ form_widget(form.nonProd) }}</td>
+            </tr>
+            <tr>
+                <td>Description*:</td><td>{{ form_widget(form.description) }}</td>
+            </tr>
+            <tr>
+                <td>Stock:</td><td>{{ form_widget(form.stock) }}</td>
+            </tr>
+            <tr>
+                <td>Price:</td><td>{{ form_widget(form.prix) }}</td>
+            </tr>
+            <tr>
+                <td>Picture:</td><td>{{ form_row(form.image) }}</td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" value="update"></td>
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+{% endblock %}

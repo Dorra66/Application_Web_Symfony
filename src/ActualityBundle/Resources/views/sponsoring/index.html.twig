@@ -1,0 +1,48 @@
+{% extends 'template.html.twig' %}
+
+{% block dynamique %}
+
+    <h1>Sponsorings list</h1>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecontrat</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sponsoring in sponsorings %}
+            <tr>
+                <td><a href="{{ path('sponsoring_show', { 'id': sponsoring.id }) }}">{{ sponsoring.id }}</a></td>
+                <td>{% if sponsoring.dateContrat %}{{ sponsoring.dateContrat|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ sponsoring.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sponsoring_show', { 'id': sponsoring.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sponsoring_edit', { 'id': sponsoring.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('sponsoring_new') }}">Create a new sponsoring</a>
+        </li>
+    </ul>
+
+
+
+{% endblock %}
+

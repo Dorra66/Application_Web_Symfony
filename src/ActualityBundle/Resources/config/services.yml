@@ -1,0 +1,4 @@
+services:
+#    actuality.example:
+#        class: ActualityBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

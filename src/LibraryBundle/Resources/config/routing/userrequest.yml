@@ -1,0 +1,10 @@
+userrequest_new:
+    path:     /new/{id}
+    defaults: { _controller: "LibraryBundle:Userrequest:new" }
+    methods:  [GET, POST]
+
+userrequest_edit:
+    path:     /{idrequest}/edit
+    defaults: { _controller: "LibraryBundle:Userrequest:edit" }
+    methods:  [GET, POST]
+

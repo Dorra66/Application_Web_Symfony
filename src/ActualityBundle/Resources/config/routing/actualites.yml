@@ -1,0 +1,68 @@
+actualites_index:
+    path:     /index
+    defaults: { _controller: "ActualityBundle:Actualites:index" }
+    methods:  GET
+
+actualites_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActualityBundle:Actualites:show" }
+    methods:  GET
+
+actualites_new:
+    path:     /new
+    defaults: { _controller: "ActualityBundle:Actualites:new" }
+    methods:  [GET, POST]
+
+actualites_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActualityBundle:Actualites:edit" }
+    methods:  [GET, POST]
+
+actualites_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActualityBundle:Actualites:delete" }
+    methods:  DELETE
+
+actualites_home:
+    path:     /home
+    defaults: { _controller: "ActualityBundle:Actualites:home" }
+    methods:  GET
+
+actualites_affiche:
+    path:     /{id}/affiche
+    defaults: { _controller: "ActualityBundle:Actualites:affiche" }
+    methods:  GET
+
+actualites_signal:
+    path:     /{id}/signal
+    defaults: { _controller: "ActualityBundle:Actualites:signal" }
+    methods:  GET
+
+actualites_signalshow:
+    path:     /signalshow
+    defaults: { _controller: "ActualityBundle:Actualites:signalshow" }
+    methods:  GET
+
+actualites_signaldelete:
+    path:     /signaldelete/{id}
+    defaults: { _controller: "ActualityBundle:Actualites:signaldelete" }
+    methods:  GET
+
+actualites_fav:
+    path:     /{id}/fav
+    defaults: { _controller: "ActualityBundle:Actualites:fav" }
+    methods:  GET
+
+actualites_showfav:
+    path:     /favshow
+    defaults: { _controller: "ActualityBundle:Actualites:favshow" }
+    methods:  GET
+
+delete_fav:
+    path:     /{id}/dfav
+    defaults: { _controller: "ActualityBundle:Actualites:dfav" }
+    methods:  GET
+
+
+
+

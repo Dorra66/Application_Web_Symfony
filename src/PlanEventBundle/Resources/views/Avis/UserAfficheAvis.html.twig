@@ -1,0 +1,32 @@
+{##}{% extends 'base.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h2> My Feed_Backs list </h2>
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        <table border="2" class="table" id="tableac">
+            <thead class="thead-dark" >
+            <tr>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Date</th>
+                <th scope="col">Feed_Back Description</th>
+                <th scope="col"></th>
+            {% for f in avis %}
+
+
+                <tr>
+                    <td> {{ f.idevent.nomevent }} </td>
+                    <td> {{ f.idevent.dateevent | date('l , Y-m-d') }} </td>
+                    <td>  {{ f.descriptionavis }} </td>
+                    <td> <a href="{{ path('plan_event_UserDeleteAvis',{'id':f.idavis}) }}"> <button class="btn btn-dark"> Supprimer </button></a>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <div class="BackButtons" style="margin-left: 89%">
+        <a href="{{ path('book_index') }}"><button type="button" class="btn btn-dark">Back to the list</button></a>
+    </div>
+{#    <div style="height:495px">#}
+    <h3> Take a close look !</h3>
+    <table class="table table-striped">
+    <thead>
+    <tbody>
+    <tr>
+            <th scope="col">Bookid</th>
+            <td>{{ book.bookid}}</td>
+    </tr>
+
+    <tr>
+        <th scope="col">Booktitle</th>
+        <td>{{ book.booktitle}}</td>
+    </tr>
+
+    <tr>
+        <th scope="col">Bookauthor</th>
+        <td>{{ book.bookauthor}}</td>
+    </tr>
+    <tr>
+        <th scope="col">Booktype</th>
+        <td>{{ book.booktitle}}</td>
+    </tr>
+    <tr>
+        <th scope="col">Bookimage</th>
+        <td> <img src="{{ asset('images/' ~ book.bookimage) }}"height="80" width="100"> </td>
+    </tr>
+    <tr>
+        <th scope="col">Bookadddate</th>
+        <td>{{book.bookadddate|date('Y-m-d')}}</td>
+    </tr>
+    <tr>
+        <th scope="col">Bookquantity</th>
+        <td>{{book.bookquantity}}</td>
+    </tr>
+    <tr>
+        <th scope="col">Bookavail</th>
+        <td>{% if book.bookavail %}Yes{% else %}No{% endif %}</td>
+    </tr>
+        </tbody>
+    </table>
+    {{ form_start(delete_form) }}
+    <a href="{{ path('book_index') }}"><button type="submit" class="btn btn-danger" style="margin-left:85%;width: 15%">Delete this book</button></a>
+    {{ form_end(delete_form) }}
+    </div>
+{% endblock %}
+
+
+

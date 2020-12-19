@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}City Of culture{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset ('css/bootstrap.css') }}" rel="stylesheet">
+            <link href="{{ asset ('css/font-awesome.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/css_slider.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/single.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        {% endblock %}
+
+    </head>
+    <body>
+    {% block header %}
+    <header id="home">
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-sm-3 py-2 px-sm-2 px-1">
+                <!-- logo -->
+                <div id="logo">
+                    <h1><a href="index.html">Culture City</a></h1>
+                </div>
+                <!-- //logo -->
+                <!-- nav -->
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+
+                            <li class="ml-xl-5 ml-lg-2 mt-lg-0 mt-sm-4 mt-3">
+                                {% if is_granted('ROLE_USER') %}
+                            <li>
+                                <!-- Actuality Drop Down -->
+                                <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                </label>
+                                <a href="#"> News <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="{{ path('actualites_home') }}" class="drop-text">News</a></li>
+                                    <li><a href="{{ path('publicites_home') }}" class="drop-text">Advertising</a></li>
+                                    <li><a href="{{ path('sponsoring_home') }}" class="drop-text">Sponsorship</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-2" class="toggle toogle-2">Events <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                </label>
+                                <a href="#">Events <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="{{ path('plan_event_UserAfficheEvent') }}" class="drop-text">Events</a></li>
+                                    <li><a href="{{ path('plan_event_UserAfficheDemande') }}" class="drop-text">My Confirmed Reservations Requests</a></li>
+                                    <li><a href="{{ path('plan_event_UserAfficheRejectedDemande') }}" class="drop-text">My Rejected Reservations Requests</a></li>
+                                    <li><a href="{{ path('plan_event_UserAfficheProgressdDemande') }}" class="drop-text">My Reservations Requests</a></li>
+                                    <li><a href="{{ path('plan_event_UserAfficheParticipation') }}" class="drop-text">My Participations</a></li>
+                                    <li><a href="{{ path('plan_event_UserAjoutDemande') }}" class="drop-text">Add Reservation</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+                                <!-- Library Drop Down -->
+                                <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                </label>
+                                <a href="#"> Library <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="{{ path('library_homepage') }}" class="drop-text">books</a></li>
+                                    <li><a href="{{ path('library_UserRequestIndex') }}" class="drop-text">Requests</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <!-- Museum Drop Down -->
+                                <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                </label>
+                                <a href="#">Museum <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="{{ path('museum_showSomeMonumentspage') }}" class="drop-text">Some Monuments</a></li>
+                                    <li><a href="{{ path('museum_sendVisitRequestpage') }}" class="drop-text">Send Visit Request</a></li>
+                                    <li><a href="{{ path('museum_showMyVisitRequestspage') }}" class="drop-text">My Visit Requests</a></li>
+                                    <li><a href="{{ path('museum_sendClaimpage') }}" class="drop-text">Send Claim</a></li>
+                                    <li><a href="{{ path('museum_showMyClaimspage') }}" class="drop-text">My Claims</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-2" class="toggle toogle-2">E_commerce <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                </label>
+                                <a href="#">E_commerce <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="{{ path('ecommerce_affichecataloguepage') }}" class="drop-text">Catalogue</a></li>
+                                    <li><a href="{{ path('ecommerce_monpanierpage') }}" class="drop-text">My basket</a></li>
+                                    <li><a href="{{ path('ecommerce_totalpage') }}" class="drop-text">Total</a></li>
+                                </ul>
+                            </li>
+                                     <li><a href="{{ path('fos_user_security_logout') }}" class="reqe-button text-uppercase">Logout</a> </li>
+                                {% else %}
+                                    <li><a href="{{ path('fos_user_security_login') }}" class="reqe-button text-uppercase">Login</a> </li>
+                                    <a href="register" class="reqe-button text-uppercase">Register</a>
+                            {% endif %}
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //nav -->
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+
+    {% block dynamique %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <footer class="footer py-md-5 pt-md-3 pb-sm-5">
+        <div class="container">
+            <div class="row p-sm-4 px-3 py-3">
+                <div class="col-lg-4 footer-top mt-md-0 mt-sm-5">
+                    <h2>
+                        <a class="navbar-brand" href="index.html">
+                            Culture City
+                        </a>
+                    </h2>
+                    <div class="fv3-contact mt-2">
+                        <p>
+                            <a href="mailto:example@email.com">http://www.citedelaculture.gov.tn/</a>
+                        </p>
+                    </div>
+                    <div class="fv3-contact my-2">
+                        <p>+216 28 461 120</p>
+                    </div>
+                </div>
+                <div class="col-lg-2  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Navigation</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="index.html">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="about.html">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Links</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="about.html">
+                                    Our Mission
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="single.html">
+                                    Latest posts
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Explore
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    Find us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Links</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="single.html">
+                                    more
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    our work
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="about.html">
+                                    Explore
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    references
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Links</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Explore
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">
+                                    Our Mission
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="single.html">
+                                    Latest posts
+                                </a>
+                            </li>
+
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    Find us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //footer bottom -->
+    </footer>
+    {% endblock %}
+    {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

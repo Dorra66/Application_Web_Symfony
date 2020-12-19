@@ -1,0 +1,35 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <h1> Add a room</h1>
+        <br>
+        <br>
+        <br>
+    </center>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> Libelle:</td> <td> {{ form_widget(form.libelle) }}</td>
+            </tr>
+            <tr>
+                <td> Capacite:</td> <td> {{ form_widget(form.capacite) }}</td> <td> {{ form_errors(form.capacite) }}</td>
+            </tr>
+            <tr>
+                <td> Categorie:</td> <td> {{ form_widget(form.categoriesalle) }}</td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td>
+                    {% if (test=="modify") %}
+                    <input type="submit" value="Modifier">
+                    {% else %}
+                    <input type="submit" value="Ajouter"></td>
+                {% endif %}
+            </tr>
+        </table>
+        {{ form_end(form) }}
+    </center>
+
+{% endblock %}

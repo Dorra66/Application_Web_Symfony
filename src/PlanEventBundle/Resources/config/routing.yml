@@ -1,0 +1,131 @@
+plan_event_homepage:
+    path:     /
+    defaults: { _controller: PlanEventBundle:Default:index }
+
+plan_event_afficheSalle:
+    path:     /afficheSalle
+    defaults: { _controller: PlanEventBundle:Salle:afficheSalle }
+
+plan_event_ajoutSalle:
+    path:     /ajoutSalle
+    defaults: { _controller: PlanEventBundle:Salle:ajoutSalle }
+
+plan_event_deleteSalle:
+    path:     /deleteSalle/{id}
+    defaults: { _controller: PlanEventBundle:Salle:deleteSalle }
+
+plan_event_updateSalle:
+    path:     /updateSalle/{id}
+    defaults: { _controller: PlanEventBundle:Salle:updateSalle }
+
+plan_event_afficheEvent:
+    path:     /afficheEvent
+    defaults: { _controller: PlanEventBundle:Event:afficheEvent }
+
+plan_event_ajoutEvent:
+    path:     /ajoutEvent
+    defaults: { _controller: PlanEventBundle:Event:ajoutEvent }
+
+plan_event_updateEvent:
+    path:     /updateEvent/{id}
+    defaults: { _controller: PlanEventBundle:Event:updateEvent }
+
+plan_event_deleteEvent:
+    path:     /deleteEvent/{id}
+    defaults: { _controller: PlanEventBundle:Event:deleteEvent }
+
+plan_event_UserAfficheEvent:
+    path:     /UserAfficheEvent
+    defaults: { _controller: PlanEventBundle:UserEvent:UserAfficheEvent }
+
+plan_event_UserAjoutDemande:
+    path:     /UserAjoutDemande
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserAjoutDemande }
+
+plan_event_UserAfficheDemande:
+    path:     /UserAfficheDemande
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserAfficheDemande }
+
+plan_event_UserDeleteDemande:
+    path:     /UserDeleteDemande/{id}
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserDeleteDemande }
+
+plan_event_AfficheDemande:
+    path:     /AfficheDemande
+    defaults: { _controller: PlanEventBundle:DemandeReserv:AfficheDemande }
+
+plan_event_confirmerDemande:
+    path:     /confirmerDemande/{id}
+    defaults: { _controller: PlanEventBundle:DemandeReserv:confirmerDemande }
+
+plan_event_ajoutParticipation:
+    path:     /ajoutParticipation/{id}
+    defaults: { _controller: PlanEventBundle:Participation:ajoutParticipation }
+
+plan_event_UserAfficheParticipation:
+    path:     /UserAfficheParticipation
+    defaults: { _controller: PlanEventBundle:Participation:UserAfficheParticipation }
+
+plan_event_UserDeleteParticipation:
+    path:     /UserDeleteParticipation/{id}
+    defaults: { _controller: PlanEventBundle:Participation:UserDeleteParticipation }
+
+plan_event_AfficheParticipation:
+    path:     /AfficheParticipation
+    defaults: { _controller: PlanEventBundle:Participation:AfficheParticipation }
+
+plan_event_deleteParticipation:
+    path:     /deleteParticipation/{id}
+    defaults: { _controller: PlanEventBundle:Participation:deleteParticipation }
+
+plan_event_rejeterDemande:
+    path:     /rejeterDemande/{id}
+    defaults: { _controller: PlanEventBundle:DemandeReserv:rejeterDemande }
+
+plan_event_UserUpdateDemande:
+    path:     /UserUpdateDemande/{id}
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserUpdateDemande }
+
+plan_event_userpage:
+    path:     /userpage
+    defaults: { _controller: PlanEventBundle:Default:userpage }
+
+plan_event_adminpage:
+    path:     /adminpage
+    defaults: { _controller: PlanEventBundle:Default:adminpage }
+
+plan_event_lateParticipation:
+    path:     /lateParticipation
+    defaults: { _controller: PlanEventBundle:Participation:lateParticipation }
+
+plan_event_UserAjoutAvis:
+    path:     /ajoutAvis/{id}
+    defaults: { _controller: PlanEventBundle:Avis:ajoutAvis }
+
+plan_event_UserAfficheAvis:
+    path:     /UserAfficheAvis
+    defaults: { _controller: PlanEventBundle:Avis:UserAfficheAvis }
+
+plan_event_UserDeleteAvis:
+    path:     /UserDeleteAvis/{id}
+    defaults: { _controller: PlanEventBundle:Avis:UserDeleteAvis }
+
+plan_event_AfficheAvis:
+    path:     /AfficheAvis
+    defaults: { _controller: PlanEventBundle:Avis:AfficheAvis }
+
+plan_event_DeleteAvis:
+    path:     /DeleteAvis/{id}
+    defaults: { _controller: PlanEventBundle:Avis:DeleteAvis }
+
+plan_event_ajax_search:
+    path:     /ajax_search
+    defaults: { _controller: PlanEventBundle:Event:search }
+
+plan_event_UserAfficheRejectedDemande:
+    path:     /UserAfficheRejectedDemande
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserAfficheRejectedDemande }
+
+plan_event_UserAfficheProgressdDemande:
+    path:     /UserAfficheProgressDemande
+    defaults: { _controller: PlanEventBundle:UserDemandeReserv:UserAfficheProgressDemande }

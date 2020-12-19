@@ -1,0 +1,112 @@
+museum_homepage:
+    path:     /index
+    defaults: { _controller: MuseumBundle:Default:index }
+
+museum_login:
+    path:     /login
+    defaults: { _controller: MuseumBundle:User:login }
+# Monument;
+museum_addMonumentpage:
+    path:    /addMonument
+    defaults: { _controller: MuseumBundle:Monument:addMonument }
+
+museum_showMonumentspage:
+    path:    /showMonuments
+    defaults: { _controller: MuseumBundle:Monument:showMonuments }
+
+museum_editMonumentpage:
+    path:    /editMonument/{id}
+    defaults: { _controller: MuseumBundle:Monument:editMonument }
+
+museum_deleteMonumentpage:
+    path:    /deleteMonument/{id}
+    defaults: { _controller: MuseumBundle:Monument:deleteMonument }
+
+museum_showSomeMonumentspage:
+    path:    /showSomeMonuments
+    defaults: { _controller: MuseumBundle:Monument:showSomeMonuments }
+
+# Demande visite;
+museum_sendVisitRequestpage:
+    path:    /sendVisitRequest
+    defaults: { _controller: MuseumBundle:Demandevisite:sendVisitRequest }
+
+museum_showVisitRequestspage:
+    path:    /showVisitRequests
+    defaults: { _controller: MuseumBundle:Demandevisite:showInProgressVisit }
+
+museum_showConfirmedVisitpage:
+    path:    /showConfirmedVisit
+    defaults: { _controller: MuseumBundle:Demandevisite:showConfirmedVisit }
+
+museum_showMyVisitRequestspage:
+    path:    /showMyVisitRequests
+    defaults: { _controller: MuseumBundle:Demandevisite:showMyVisitRequests }
+
+museum_confirmRequestpage:
+    path:    /confirmRequest/{id}
+    defaults: { _controller: MuseumBundle:Demandevisite:confirmRequest }
+
+museum_refuseRequestpage:
+    path:    /refuseRequest/{id}
+    defaults: { _controller: MuseumBundle:Demandevisite:refuseRequest }
+
+museum_deleteVisitRequestpage:
+    path:    /deleteVisitRequest/{id}
+    defaults: { _controller: MuseumBundle:Demandevisite:deleteVisitRequest }
+
+museum_deleteConfirmedVisitpage:
+    path:    /deleteConfirmedVisit/{id}
+    defaults: { _controller: MuseumBundle:Demandevisite:deleteConfirmedVisit }
+# Réclamation :
+museum_sendClaimpage:
+    path:    /sendClaim
+    defaults: { _controller: MuseumBundle:Reclamationm:sendClaim }
+
+museum_replyClaimpage:
+    path:    /replyClaim/{id}
+    defaults: { _controller: MuseumBundle:Reclamationm:replyClaim }
+
+museum_showClaimspage:
+    path:    /showClaims
+    defaults: { _controller: MuseumBundle:Reclamationm:showClaims }
+
+museum_showMyClaimspage:
+    path:    /showMyClaims
+    defaults: { _controller: MuseumBundle:Reclamationm:showMyClaims }
+
+museum_deleteClaimpage:
+    path:    /deleteClaim/{id}
+    defaults: { _controller: MuseumBundle:Reclamationm:deleteClaim }
+
+museum_adminHomepage:
+    path:    /adminHome
+    defaults: { _controller: MuseumBundle:Default:adminHome }
+
+museum_userHomepage:
+    path:    /userHome
+    defaults: { _controller: MuseumBundle:Default:userHome }
+    ###Mobile:Monument###
+museum_showSomeMonumentsMobpage:
+    path:    /showSomeMonumentsMobile
+    defaults: { _controller: MuseumBundle:Monument:showSomeMonumentsMobile }
+    ###Mobile:DemandeVisite###
+museum_showMyVisitRequestsMobpage:
+    path:    /showMyVisitRequestsMobile/{person}
+    defaults: { _controller: MuseumBundle:Demandevisite:showMyVisitRequestsMobile }
+
+museum_sendVisitRequestMobpage:
+    path:    /sendVisitRequestMobile
+    defaults: { _controller: MuseumBundle:Demandevisite:sendVisitRequestMobile }
+    ###Mobile:Reclamation###
+museum_showMyClaimsMobpage:
+    path:    /showMyClaimsMobile/{person}
+    defaults: { _controller: MuseumBundle:Reclamationm:showMyClaimsMobile }
+
+museum_sendClaimMobpage:
+    path:    /sendClaimMobile
+    defaults: { _controller: MuseumBundle:Reclamationm:sendClaimMobile }
+
+museum_showClaimsMobpage:
+    path:    /showClaimsMobile
+    defaults: { _controller: MuseumBundle:Reclamationm:showClaimsMobile }

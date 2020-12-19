@@ -1,0 +1,35 @@
+{% extends 'template.html.twig' %}
+{% block dynamique %}
+    <center>
+        <br>
+        <br>
+        <img alt="gproduit" src="{{ asset('images/ecom.png')  }}"  height="150px" width="200px" align="center"><h2 style="color: red  ;font-family: 'Rock Salt', cursive ;font-style: italic;  color: #666 ; letter-spacing: 1px ; caption-side: bottom ; padding: 20px ; text-shadow: 1px 1px 1px black "> Orders list </h2>
+        <br>
+        <table border="1" width="60%"    align="center" style="background-color:#ebf5fb ">
+            <tr>
+
+                <td><label>ID</label></td>
+                <td><label>Date</label></td>
+                <td><label>Total</label></td>
+                <td><label>ID-Client</label></td>
+            </tr>
+            {% for f in cmds %}
+                <tr>
+
+                    <td> {{ f.idCmd}} </td>
+                    <td> {{ f.date |date('Y-m-d H:i:s')}} </td>
+                    <td> {{ f.total}} </td>
+                    <td> {{ f.idClient}} </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+
+{% endblock %}
